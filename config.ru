@@ -1,15 +1,11 @@
 require 'sidekiq'
-require 'yaml'
-
-environment = ENV['RAILS_ENV'] || "development"
-config_vars = YAML.load_file("./config.yml")[environment]
 
 use Rack::Auth::Basic do |username, password|
-  username == config_vars["username"] && password == config_vars["password"]
+  username == ENV['SIDEKIQ_USERNAME'] && password == ENV["SIDEKIQ_PASSWORD"]
 end
 
 Sidekiq.configure_client do |config|
-  config.redis = { :url => config_vars["redis_url"] }
+  config.redis = { :url => ENV["SIDEKIQ_REDIS_URL"] }
 end
 
 require 'sidekiq/web'
