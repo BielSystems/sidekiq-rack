@@ -3,20 +3,21 @@ GEM
   specs:
     connection_pool (2.2.2)
     rack (2.0.6)
-    rack-protection (2.0.4)
+    rack-protection (2.0.5)
       rack
-    redis (4.0.3)
+    redis (4.1.0)
     redis-namespace (1.6.0)
       redis (>= 3.0.4)
-    sidekiq (5.2.3)
+    sidekiq (5.2.5)
       connection_pool (~> 2.2, >= 2.2.2)
+      rack (>= 1.5.0)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
-    temple (0.8.0)
-    tilt (2.0.8)
+    temple (0.8.1)
+    tilt (2.0.9)
 
 PLATFORMS
   ruby
@@ -28,7 +29,7 @@ DEPENDENCIES
   slim
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.6.2p47
 
 BUNDLED WITH
-   1.16.1
+   1.17.3
