@@ -5,7 +5,7 @@ use Rack::Auth::Basic do |username, password|
 end
 
 Sidekiq.configure_client do |config|
-  config.redis = { url: ENV["SIDEKIQ_REDIS_URL"], namespace: ENV["SIDEKIQ_REDIS_NAMESPACE"] }
+  config.redis = { size: 1, url: ENV["SIDEKIQ_REDIS_URL"], namespace: ENV["SIDEKIQ_REDIS_NAMESPACE"] }
 end
 
 require 'sidekiq/web'
