@@ -3,10 +3,10 @@ GEM
   specs:
     connection_pool (2.2.3)
     rack (2.2.3)
-    redis (4.2.1)
-    redis-namespace (1.7.0)
+    redis (4.2.5)
+    redis-namespace (1.8.0)
       redis (>= 3.0.4)
-    sidekiq (6.1.1)
+    sidekiq (6.1.2)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
@@ -19,6 +19,7 @@ GEM
 PLATFORMS
   ruby
   x86_64-darwin-16
+  x86_64-darwin-19
 
 DEPENDENCIES
   redis-namespace
@@ -29,4 +30,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   1.17.3
+   2.2.0
