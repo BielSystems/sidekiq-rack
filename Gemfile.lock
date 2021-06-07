@@ -1,20 +1,74 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    connection_pool (2.2.3)
+    ast (2.4.2)
+    backport (1.1.2)
+    benchmark (0.1.1)
+    connection_pool (2.2.5)
+    e2mmap (0.1.0)
+    foreman (0.87.2)
+    jaro_winkler (1.5.4)
+    kramdown (2.3.1)
+      rexml
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
+    nio4r (2.5.7)
+    nokogiri (1.11.7-x86_64-darwin)
+      racc (~> 1.4)
+    parallel (1.20.1)
+    parser (3.0.1.1)
+      ast (~> 2.4.1)
+    puma (5.3.2)
+      nio4r (~> 2.0)
+    racc (1.5.2)
     rack (2.2.3)
+    rack-ssl-enforcer (0.2.9)
+    rainbow (3.0.0)
     redis (4.2.5)
     redis-namespace (1.8.1)
       redis (>= 3.0.4)
-    sidekiq (6.2.0)
+    regexp_parser (2.1.1)
+    reverse_markdown (2.0.0)
+      nokogiri
+    rexml (3.2.5)
+    rubocop (1.16.0)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.7.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.7.0)
+      parser (>= 3.0.1.1)
+    ruby-progressbar (1.11.0)
+    sidekiq (6.2.1)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
+    solargraph (0.41.1)
+      backport (~> 1.1)
+      benchmark
+      bundler (>= 1.17.2)
+      e2mmap
+      jaro_winkler (~> 1.5)
+      kramdown (~> 2.3)
+      kramdown-parser-gfm (~> 1.1)
+      parser (~> 3.0)
+      reverse_markdown (>= 1.0.5, < 3)
+      rubocop (>= 0.52)
+      thor (~> 1.0)
+      tilt (~> 2.0)
+      yard (~> 0.9, >= 0.9.24)
     temple (0.8.2)
+    thor (1.1.0)
     tilt (2.0.10)
+    unicode-display_width (2.0.0)
+    yard (0.9.26)
 
 PLATFORMS
   ruby
@@ -22,12 +76,17 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  foreman
+  puma
+  rack-ssl-enforcer
   redis-namespace
+  rubocop
   sidekiq
   slim
+  solargraph
 
 RUBY VERSION
-   ruby 2.6.6p146
+   ruby 3.0.1p64
 
 BUNDLED WITH
-   2.2.8
+   2.2.18
